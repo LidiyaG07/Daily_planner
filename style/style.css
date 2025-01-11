@@ -1,0 +1,253 @@
+body {
+  background: var(--bacColor);
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 70%;
+  padding: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.look-calendar {
+  margin-right: 30px;
+  font-size: 25px;
+  color: aliceblue;
+  min-width: 100%;
+}
+.look-calendar table {
+  min-width: 100%;
+  display: inline-block;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+#calendar thead {
+  min-height: 100%;
+}
+
+.mounth {
+  min-width: 100%;
+  margin-bottom: 10px;
+  font-size: 20px bold;
+}
+
+ul {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  li {
+    text-align: left;
+
+    a {
+      color: var(--mainColor);
+    }
+  }
+}
+
+/* ***************************************PAGE Task*************************************** */
+
+.__task {
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  text-align: start;
+  color: var(--mainColor);
+}
+
+.nav__task > li {
+  list-style-type: none;
+}
+
+.__day {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 40px 100px;
+  color: var(--mainColor);
+}
+
+.day__task {
+  .day__name {
+    text-align: start;
+    margin-bottom: 10px;
+    font-size: 40px;
+  }
+}
+
+.list > li {
+  list-style-type: square;
+  font-size: 30px;
+}
+
+/* ***************************************PAGE Traker*************************************** */
+
+.__traker {
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-template-rows: repeat(3, auto);
+  color: var(--mainColor);
+  padding: 5px;
+  justify-items: start;
+}
+
+.nameTraker {
+  grid-column: span 3;
+  margin-bottom: 30px;
+  font-size: 40px;
+  text-align: start;
+}
+
+.look-calendar {
+  max-width: 100%;
+  /* gap: 20px; */
+  grid-row: 2/3;
+}
+
+td {
+  width: 50px;
+}
+
+.marker {
+  width: 100%;
+  grid-row: 2/2;
+  grid-column: span 2;
+  padding-left: 12px;
+
+  .marker__marks {
+    font-size: 30px;
+  }
+
+  .marker__list {
+    padding: 0px 0px 0px 10px;
+  }
+
+  .marker__list > li {
+    display: flex;
+    font-size: 28px;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .line {
+    margin: 0;
+    font-size: 50px;
+    text-align: start;
+  }
+}
+
+.contanCheck {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+}
+
+.checkmark {
+  height: 15px;
+  width: 15px;
+  background-color: #56dfc8;
+  box-shadow: 0px 0px 15px rgb(93, 193, 240);
+  display: block;
+  margin: 10px 10px 0px 0px;
+  border-radius: 3px;
+}
+
+.contanCheck:hover input ~ .checkmark {
+  background-color: #165781;
+}
+
+.contanCheck input:checked ~ .checkmark {
+  background-color: #063155;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.contanCheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.contanCheck .checkmark:after {
+  left: 5px;
+  top: 10px;
+  width: 6px;
+  height: 10px;
+  border: 1px solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.notes {
+  grid-row: 3/3;
+  grid-column: span 3;
+  width: 100%;
+
+  .notes__title {
+    font-size: 30px;
+  }
+
+  .notes__text {
+    text-align: start;
+  }
+}
+
+.notes__p {
+  width: 100%;
+  padding: 2px 3px;
+  background-color: var(--bacColor);
+  color: var(--mainColor);
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+}
+
+hr {
+  width: 100%;
+  height: 3px;
+  display: inline-block;
+  margin: 5px 0px 10px;
+  color: red;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--mainColor),
+    transparent
+  );
+}
+
+.lastHR {
+  width: 100%;
+  height: 3px;
+  display: inline-block;
+  margin: 30px 0px 10px;
+  color: red;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--mainColor),
+    transparent
+  );
+}
